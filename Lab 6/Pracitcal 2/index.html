@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab 6 : Practical 2</title>
+  </head>
+
+  <style>
+    * {
+      font-family: Roboto;
+      padding: 0;
+      margin: 0;
+    }
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    .box {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+  </style>
+
+  <body>
+    <div class="box">
+      <label for="name">Name</label>
+      <input type="text" name="name" id="name" value="Anonymous" />
+      <input type="submit" value="Greet" id="greet" />
+      <div id="res"></div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $(document).ready(function () {
+        $("#greet").on("click", function () {
+          const name = $("#name").val();
+          const hour = new Date().getHours();
+          let msg = "";
+
+          if (hour >= 5 && hour < 12) msg = " Morning, ";
+          else if (hour >= 12 && hour < 16) msg = " Afternoon, ";
+          else if (hour >= 16 && hour < 17) msg = " Evening, ";
+          else msg = " Night, ";
+
+          if (msg == " Night, ") {
+            $("body").css("backgroundColor", "black");
+            $("body").css("color", "white");
+          } else {
+            $("body").css("backgroundColor", "#ffff60");
+            $("body").css("color", "black");
+          }
+
+          $("#res").text("Good" + msg + name);
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+/* body {
+    
+} */
+
+table {
+    border-radius: .4rem;
+    padding: .4rem;
+    border: solid white 2px;
+}
+
+tr {
+    border: solid white 2px;
+}
+
+td {
+    border: solid #b4b4b4 2px;
+    padding: 1rem;
+    border-radius: .4rem;
+}

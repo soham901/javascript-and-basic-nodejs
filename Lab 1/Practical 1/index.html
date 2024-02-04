@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Practical 1</title>
+  </head>
+  <body>
+    <span>Answer:</span>
+    <script>
+      let x = parseInt(prompt("Enter first number"));
+      let y = parseInt(prompt("Enter second number"));
+      let op = prompt("Enter the operator");
+
+      switch (op) {
+        case "+":
+          document.write(x + y);
+          break;
+
+        case "-":
+          document.write(x - y);
+          break;
+
+        case "*":
+          document.write(x * y);
+          break;
+
+        case "/":
+          document.write(x / y);
+          break;
+
+        case "%":
+          document.write(x % y);
+          break;
+
+        default:
+          document.write("Choose valid inputs");
+          break;
+      }
+    </script>
+  </body>
+</html>

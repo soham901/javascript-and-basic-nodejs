@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Practical 4</title>
+  </head>
+  <body>
+    <script>
+      function print(params) {
+        document.write(params);
+        document.write("<br/>");
+      }
+
+      function sort(arr) {
+        for (let i = 0; i < arr.length; i++) {
+          for (let j = 0; j < arr.length; j++) {
+            if (arr[i] < arr[j]) {
+              let temp = arr[i];
+              arr[i] = arr[j];
+              arr[j] = temp;
+            }
+          }
+        }
+        return arr;
+      }
+
+      let arr = [];
+      let num = prompt("Enter: ");
+      while (num != "") {
+        arr.push(parseInt(num));
+        num = prompt("Enter: ");
+      }
+      sort(arr);
+      print(arr);
+    </script>
+  </body>
+</html>

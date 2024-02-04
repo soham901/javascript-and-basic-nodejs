@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Practical 3</title>
+  </head>
+  <body>
+    <script>
+      let f = 0;
+      let s = 1;
+      let n = 10;
+      let a = 0;
+
+      function print(params) {
+        document.write(params);
+        document.write("<br/>");
+      }
+
+      //  0 1 1 2 3 5 8
+      //  f s
+      //    f s
+
+      for (let i = 0; i < n; i++) {
+        print(f);
+        a = f + s;
+        f = s;
+        s = a;
+      }
+    </script>
+  </body>
+</html>

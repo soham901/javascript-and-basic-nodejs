@@ -1,0 +1,57 @@
+.border {
+    border: .4rem solid cyan;
+}
+
+.border-r {
+    border-left: .4rem solid cyan;
+}
+
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.w-20 {
+    width: 20%;
+}
+
+.w-80 {
+    width: 80%;
+}
+
+header {
+    height: 15vh;
+    border: .4rem solid cyan;
+    border-bottom: none;
+}
+
+footer {
+    height: 15vh;
+    border: .4rem solid cyan;
+    border-top: none;
+}
+
+.container {
+    display: flex;
+    height: 70vh;
+}
+
+.bg {
+    background-color: #474747;
+    padding: .4rem 1rem;
+    margin: 1rem;
+    border-radius: .4rem;
+}
+
+table {
+    border: .4rem solid #494949;
+    margin: 2rem;
+    border-radius: .4rem;
+}
+
+table td {
+    padding: .6rem 1rem;
+}

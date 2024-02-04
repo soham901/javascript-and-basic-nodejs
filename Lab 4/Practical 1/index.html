@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Practical 1</title>
+  </head>
+  <style>
+    input {
+      border: 1px solid black;
+      border-radius: 0.4rem;
+      padding: 0.2rem;
+      margin: 0.2rem;
+    }
+  </style>
+  <body>
+    <form
+      onsubmit="formsubmit()"
+      style="
+        display: flex;
+        flex-direction: column;
+        width: 12rem;
+        gap: 0.8rem;
+        margin: auto;
+        margin-top: 4rem;
+      "
+    >
+      <div style="display: flex">
+        <label for="fullname">Fullname</label>
+        <input type="text" id="fullname" />
+      </div>
+      <div style="display: flex">
+        <label for="email">Email</label>
+        <input type="email" id="email" />
+      </div>
+      <div style="display: flex">
+        <label for="contact">Contact</label>
+        <input type="number" id="contact" />
+      </div>
+      <div style="display: flex">
+        <label for="password">Password</label>
+        <input type="text" id="password" />
+      </div>
+      <div style="display: flex">
+        <label for="course">Course</label>
+        <select name="course" id="course">
+          <option value="NCERT">NCERT</option>
+          <option value="CBSE">CBSE</option>
+          <option value="ICSE">ICSE</option>
+        </select>
+      </div>
+      <input type="submit" value="Submit" />
+    </form>
+
+    <script>
+      function print(params) {
+        document.write(params);
+        document.write("<br/>");
+      }
+
+      const inputs = document.querySelectorAll("input");
+
+      inputs.forEach((input) => {
+        input.addEventListener("input", (e) => {
+          if (e.target.value === "") {
+            e.target.style.border = "1px solid red";
+          } else {
+            e.target.style.border = "1px solid black";
+          }
+        });
+      });
+
+      const regexFullname = /^[A-z]+$/;
+      const regexEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+      const regexContact = /^[0-9]{10}$/;
+      const regexPassword =
+        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]+$/;
+
+      let fullname = document.getElementById("fullname");
+      let email = document.getElementById("email");
+      let contact = document.getElementById("contact");
+      let course = document.getElementById("course");
+      let password = document.getElementById("password");
+
+      function formsubmit() {
+        if (
+          [
+            fullname.value,
+            email.value,
+            contact.value,
+            course.value,
+            password.value,
+          ].includes("")
+        ) {
+          alert("Please fill all the fields");
+          return;
+        }
+
+        if (!regexFullname.test(fullname.value)) {
+          alert("Please enter a valid name");
+          return;
+        }
+
+        if (!regexEmail.test(email.value)) {
+          alert("Please enter a valid email");
+          return;
+        }
+
+        if (!regexContact.test(contact.value)) {
+          alert("Please enter a valid contact");
+          return;
+        }
+
+        if (!regexPassword.test(password.value)) {
+          alert("Please enter a valid password");
+          return;
+        }
+
+        [fullname, email, contact, course, password].forEach((input) => {
+          input.value = "";
+        });
+
+        // print("Fullname: " + fullname);
+        // print("Email: " + email);
+        // print("Contact: " + contact);
+        // print("Course: " + course);
+        // print("Password: " + password);
+      }
+    </script>
+  </body>
+</html>

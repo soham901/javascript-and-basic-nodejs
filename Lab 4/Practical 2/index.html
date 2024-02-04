@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Practical 2</title>
+  </head>
+  <style>
+    .container {
+      display: flex;
+      flex-direction: column;
+      width: 12rem;
+      gap: 0.8rem;
+      margin: auto;
+      margin-top: 4rem;
+    }
+    select,
+    input {
+      width: 100%;
+    }
+    .flex {
+      gap: 0.8rem;
+      justify-content: center;
+      display: flex;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <h1 class="flex">Calculator</h1>
+      <div class="flex">
+        <label for="a">A</label>
+        <input type="number" id="a" />
+      </div>
+      <div class="flex">
+        <select name="op" id="op">
+          <option value="add">Add</option>
+          <option value="sub">Sub</option>
+          <option value="mul">Mul</option>
+          <option value="div">Div</option>
+          <option value="mod">Mod</option>
+        </select>
+      </div>
+      <div class="flex">
+        <label for="b">B</label>
+        <input type="number" id="b" />
+      </div>
+
+      <button onclick="formsubmit()">Submit</button>
+
+      <div id="result"></div>
+    </div>
+
+    <script>
+      function print(value) {
+        document.getElementById("result").innerText = "Answer: " + value;
+      }
+
+      function formsubmit() {
+        let a = document.getElementById("a").value;
+        let b = document.getElementById("b").value;
+        let op = document.getElementById("op").value;
+
+        switch (op) {
+          case "add":
+            print(parseInt(a) + parseInt(b));
+            break;
+          case "sub":
+            print(parseInt(a) - parseInt(b));
+            break;
+          case "mul":
+            print(parseInt(a) * parseInt(b));
+            break;
+          case "div":
+            print(parseInt(a) / parseInt(b));
+            break;
+          case "mod":
+            print(parseInt(a) % parseInt(b));
+            break;
+          default:
+            print("Invalid operation");
+            break;
+        }
+      }
+    </script>
+  </body>
+</html>

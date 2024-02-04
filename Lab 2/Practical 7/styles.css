@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  color: #fff;
+  font-family: "Rubik", sans-serif;
+  background-color: #171717;
+}
+
+header {
+  background-color: #0e0e0e;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  justify-content: space-evenly;
+  background: #1f1f1f;
+  border: 0.2rem solid black;
+}
+
+header nav div {
+  font-size: 0.8rem;
+  color: #cfcfcf;
+  transition: 8ms ease-in-out all;
+}
+
+header nav div:hover {
+  cursor: pointer;
+  color: white;
+  font-weight: 500;
+}
+
+.offer {
+  font-size: 0.8rem;
+  background: #1f1f1f;
+  text-align: center;
+  padding: 1rem;
+}
+
+.current-device {
+  padding: 4rem;
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  justify-content: space-evenly;
+  background-color: black;
+}
+
+.current-device .content {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+
+.current-device .content .title {
+  font-size: 3rem;
+  font-weight: bolder;
+}
+
+.current-device .content .desc {
+  font-size: 1rem;
+  color: #cfcfcf;
+  font-weight: bold;
+}
+
+.current-device .content .links {
+  display: flex;
+  gap: 2rem;
+}
+
+.current-device #showcase-video {
+  height: 70vh;
+}
+
+footer .links {
+  justify-content: space-between;
+  display: flex;
+  margin: 0 2rem;
+}
+
+footer .links nav {
+  gap: 0.4rem;
+  padding: 1rem;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+}
+
+footer .links nav a:first-child {
+  color: white;
+  font-weight: bold;
+  margin-bottom: 0.2rem;
+}
+
+footer .links nav a {
+  font-size: 1rem;
+  font-weight: lighter;
+  color: #cfcfcf;
+  display: block;
+}
+
+footer hr {
+  margin: 0 2rem;
+  color: #cfcfcf;
+}
+
+footer .header {
+  margin-left: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+footer .footer {
+  margin: 1rem 2rem;
+}
+
+footer .footer .title {
+  color: #cfcfcf;
+}

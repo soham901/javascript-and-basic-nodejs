@@ -1,0 +1,49 @@
+.title {
+    font-size: 30px;
+    font-weight: bold;
+    color: #cacaca;
+}
+
+.page {
+    width: 100vw;
+    height: 100vh;
+    border: .4rem solid cyan;
+    padding: .4rem;
+}
+
+.header {
+    height: 14vh;
+    border: .4rem solid cyan;
+    border-bottom: none;
+}
+
+.content {
+    height: 62.5vh;
+    border: .4rem solid cyan;
+    display: flex;
+}
+
+.entries {
+    width: 80%;
+    margin: .4rem;
+    border: .4rem solid cyan;
+}
+
+.entry {
+    margin: 1rem;
+    padding: .4rem;
+    border-radius: .4rem;
+    background-color: #525252;
+}
+
+.sidebar {
+    margin: .4rem;
+    width: 20%;
+    border: .4rem solid cyan;
+}
+
+.footer {
+    height: 14vh;
+    border: .4rem solid cyan;
+    border-top: none;
+}
