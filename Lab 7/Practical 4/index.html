@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practical 4</title>
+    <style>
+      * {
+        font-family: Roboto;
+      }
+      .el {
+        border-radius: 50rem;
+        padding: 1rem 2rem;
+        font-size: 1.6rem;
+      }
+      .el.active {
+        background-color: black;
+        color: white;
+      }
+      .controls {
+        margin-top: 1.2rem;
+        display: flex;
+        gap: 1rem;
+      }
+      .prev,
+      .next {
+        padding: 0.4rem 2rem;
+        text-align: center;
+        flex: 1;
+        border: solid;
+        background-color: yellow;
+      }
+      .list {
+        display: flex;
+        gap: 1.2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="list">
+      <div class="el active">Blog A</div>
+      <div class="el">Blog B</div>
+      <div class="el">Blog C</div>
+      <div class="el">Blog D</div>
+    </div>
+
+    <div class="controls">
+      <button class="prev el">PREV</button>
+      <button class="next el">NEXT</button>
+    </div>
+
+    <script src="../jquery-3.7.1.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        let i = 0;
+        $(".next").click(function () {
+          if (i == 3) {
+            return;
+          }
+          $(".el").get(i).classList.remove("active");
+          i++;
+          $(".el").get(i).classList.add("active");
+        });
+
+        $(".prev").click(function () {
+          if (i == 0) {
+            return;
+          }
+          $(".el").get(i).classList.remove("active");
+          i--;
+          $(".el").get(i).classList.add("active");
+        });
+      });
+    </script>
+  </body>
+</html>

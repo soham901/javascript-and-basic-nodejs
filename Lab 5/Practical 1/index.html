@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practical 1</title>
+  </head>
+  <body
+    style="
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    "
+  >
+    <button id="btn">Change BG</button>
+    <script>
+      const btn = document.getElementById("btn");
+      btn.addEventListener("click", click);
+
+      function click() {
+        document.body.style.backgroundColor = "black";
+      }
+    </script>
+  </body>
+</html>

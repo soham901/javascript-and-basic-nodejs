@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practical 3</title>
+  </head>
+  <body>
+    <div>Click here to make this editable</div>
+    <script src="../jquery-3.7.1.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("div").dblclick(function () {
+          $("div").css("color", "blue");
+          $("div").attr("contenteditable", true);
+        });
+        $("div").blur(function () {
+          $("div").css("color", "black");
+          $("div").attr("contenteditable", false);
+        });
+      });
+    </script>
+  </body>
+</html>

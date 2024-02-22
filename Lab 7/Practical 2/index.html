@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practical 2</title>
+    <style>
+      #btn {
+        color: white;
+        background-color: black;
+        padding: 0.2rem 0.4rem;
+        border-radius: 0.2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      Click on the button to read full content
+      <span id="btn">Read More</span>
+    </div>
+    <p>Here is a lot of text content</p>
+    <script src="../jquery-3.7.1.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("p").slideUp();
+        $("#btn").click(function () {
+          $("p").slideToggle();
+        });
+      });
+    </script>
+  </body>
+</html>
