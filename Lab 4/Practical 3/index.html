@@ -57,26 +57,13 @@
   <body>
     <div class="container">
       <h2 class="flex">Advance Calculator</h2>
-
-      <div class="flex" id="ans-box">
-        <label for="exp">
-          <b>Answer : </b>
-        </label>
-        <div id="ans"></div>
-      </div>
-
       <div class="flex">
         <label for="exp">
           <b>Expression</b>
         </label>
         <input id="exp" />
       </div>
-
       <div id="nums"></div>
-
-      <button onclick="formsubmit()">Calculate</button>
-
-      <div id="result"></div>
     </div>
 
     <script>
@@ -102,10 +89,17 @@
         0,
         ".",
         "=",
+        "/",
       ].forEach((num) => {
-        document.getElementById("nums").innerHTML += `
-          <button class="num" onclick="onNumClick('${num}');">${num}</button>
+        if (num == "=") {
+          document.getElementById("nums").innerHTML += `
+          <button class="num" id="${num}" onclick="formsubmit()">${num}</button>
         `;
+        } else {
+          document.getElementById("nums").innerHTML += `
+          <button class="num" id="${num}" onclick="onNumClick('${num}');">${num}</button>
+        `;
+        }
       });
 
       function onNumClick(num) {
@@ -124,41 +118,12 @@
         }
       }
 
-      function print(value) {
-        document.getElementById("result").innerText = "Answer: " + value;
-      }
-
       function formsubmit() {
         const exp = document.getElementById("exp").value;
 
         const ans = eval(exp);
 
-        document.getElementById("ans").innerText = ans;
-
-        // let a = document.getElementById("a").value;
-        // let b = document.getElementById("b").value;
-        // let op = document.getElementById("op").value;
-
-        // switch (op) {
-        //   case "add":
-        //     print(parseInt(a) + parseInt(b));
-        //     break;
-        //   case "sub":
-        //     print(parseInt(a) - parseInt(b));
-        //     break;
-        //   case "mul":
-        //     print(parseInt(a) * parseInt(b));
-        //     break;
-        //   case "div":
-        //     print(parseInt(a) / parseInt(b));
-        //     break;
-        //   case "mod":
-        //     print(parseInt(a) % parseInt(b));
-        //     break;
-        //   default:
-        //     print("Invalid operation");
-        //     break;
-        // }
+        document.getElementById("exp").value = ans;
       }
     </script>
   </body>
